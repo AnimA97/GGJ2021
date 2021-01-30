@@ -2,9 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OlorController : MonoBehaviour
+public class ObjetoOlorosoController : MonoBehaviour
 {
-    public float dano;
+
+    void Awake()
+    {
+
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -16,10 +20,5 @@ public class OlorController : MonoBehaviour
     void Update()
     {
         
-    }
-
-    public float getDano()
-    {
-        return dano;
     }
 }

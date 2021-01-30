@@ -193,7 +193,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveCtrl: {fileID: 913187322}
   cameraSpeed: 0.01
-  offset: {x: 5, y: 2.6, z: -10}
+  offset: {x: 8, y: 2.6, z: -10}
   speedThreshold: 0.1
   distanceThreshold: 0.1
 --- !u!20 &519420031
@@ -253,12 +253,6 @@ Transform:
   m_Father: {fileID: 987360046}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &867803244 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7023316095713688193, guid: 8fcbf130a1afd6a4f97ab527fd11f7e5,
-    type: 3}
-  m_PrefabInstance: {fileID: 2484002855135009371}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &869081183
 GameObject:
   m_ObjectHideFlags: 0
@@ -366,7 +360,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 2484002855135009371}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1790183929}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2adb199f8a6614744963210e66e076fd, type: 3}
@@ -514,34 +508,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1790183929 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2484002855941710120, guid: 8fcbf130a1afd6a4f97ab527fd11f7e5,
-    type: 3}
-  m_PrefabInstance: {fileID: 2484002855135009371}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1790183930
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1790183929}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed7699c654951aa4c856f7c236fce298, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jumpForce: 2.5
-  jumpTime: 2
-  jumpTimeCounter: 2
-  grounded: 0
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 256
-  stoppedJumping: 0
-  groundCheck: {fileID: 867803244}
-  groundCheckRadius: 1
 --- !u!4 &1808124817 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7043490752892271458, guid: 4d14b01fcf8e5984aa79d360aeb76d0d,
@@ -624,10 +590,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2484002854990287395, guid: 8fcbf130a1afd6a4f97ab527fd11f7e5,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 10
+    - target: {fileID: 913187322, guid: 8fcbf130a1afd6a4f97ab527fd11f7e5, type: 3}
+      propertyPath: fallSpeed
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 913187322, guid: 8fcbf130a1afd6a4f97ab527fd11f7e5, type: 3}
+      propertyPath: speed
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2484002855941710120, guid: 8fcbf130a1afd6a4f97ab527fd11f7e5,
         type: 3}

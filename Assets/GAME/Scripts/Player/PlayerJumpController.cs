@@ -53,7 +53,7 @@ public class PlayerJumpController : MonoBehaviour
         //I placed this code in FixedUpdate because we are using phyics to move.
 
         //if you press down the mouse button...
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetButtonDown("Jump"))
         {
             //and you are on the ground...
             if (grounded)
@@ -65,7 +65,7 @@ public class PlayerJumpController : MonoBehaviour
         }
 
         //if you keep holding down the mouse button...
-        if ((Input.GetMouseButton(0)) && !stoppedJumping)
+        if ((Input.GetButton("Jump")) && !stoppedJumping)
         {
             //and your counter hasn't reached zero...
             if (jumpTimeCounter > 0)
@@ -78,7 +78,7 @@ public class PlayerJumpController : MonoBehaviour
 
 
         //if you stop holding down the mouse button...
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetButtonUp("Jump"))
         {
             //stop jumping and set your counter to zero.  The timer will reset once we touch the ground again in the update function.
             jumpTimeCounter = 0;
