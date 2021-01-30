@@ -15,7 +15,7 @@ TagManager:
   - 
   - Ground
   - NubeOlor
-  - 
+  - Characters
   - 
   - 
   - 
@@ -40,4 +40,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Scenario
+    uniqueID: 3376901115
+    locked: 0
+  - name: Characters
+    uniqueID: 1589172537
     locked: 0

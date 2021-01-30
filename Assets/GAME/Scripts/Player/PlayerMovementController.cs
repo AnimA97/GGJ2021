@@ -64,4 +64,9 @@ public class PlayerMovementController : MonoBehaviour
         return _rigidbody.velocity;
     }
 
+    public bool IsGrounded()
+    {
+        return _isGrounded;
+    }
+
 }
