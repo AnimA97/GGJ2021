@@ -121,11 +121,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2484002855941710125}
   - component: {fileID: 2484002855941710126}
-  - component: {fileID: 2484002855941710127}
   - component: {fileID: 913187325}
   - component: {fileID: 913187322}
   - component: {fileID: 913187328}
-  - component: {fileID: 1790183930}
+  - component: {fileID: 5439325300158514859}
   m_Layer: 0
   m_Name: Dog
   m_TagString: Untagged
@@ -168,34 +167,8 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
---- !u!61 &2484002855941710127
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2484002855941710120}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.13999999, y: -0.7716812}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.17, y: 1.0884972}
-  m_EdgeRadius: 0
 --- !u!95 &913187325
 Animator:
   serializedVersion: 3
@@ -227,13 +200,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2adb199f8a6614744963210e66e076fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2.5
-  jumpForce: 7.5
+  speed: 4
+  jumpForce: 8
   groundCheck: {fileID: 7023316095713688193}
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
   groundCheckRadius: 1
+  fallSpeed: 2.5
 --- !u!114 &913187328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -246,25 +220,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 031e3f5832e534d40843dd0664244a5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1790183930
-MonoBehaviour:
+--- !u!70 &5439325300158514859
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2484002855941710120}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed7699c654951aa4c856f7c236fce298, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jumpForce: 2.5
-  jumpTime: 2
-  jumpTimeCounter: 2
-  grounded: 0
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 256
-  stoppedJumping: 0
-  groundCheck: {fileID: 7023316095713688193}
-  groundCheckRadius: 1
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.12, y: -1.13}
+  m_Size: {x: 1.0000001, y: 0.3259088}
+  m_Direction: 1
