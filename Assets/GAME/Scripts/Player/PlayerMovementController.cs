@@ -12,6 +12,7 @@ public class PlayerMovementController : MonoBehaviour
     public Transform groundCheck;
     public LayerMask groundLayer;
     public float groundCheckRadius;
+    public float fallSpeed;
 
     //Componentes
     private Rigidbody2D _rigidbody;
@@ -54,8 +55,11 @@ public class PlayerMovementController : MonoBehaviour
 
         if (Input.GetButtonDown("Jump") && _isGrounded == true)
         {
-            Debug.Log(Time.time);
             _rigidbody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        }
+        if (!_isGrounded && _rigidbody.velocity.y < 0f) 
+        {
+            _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, _rigidbody.velocity.y * fallSpeed);
         }
     }
 

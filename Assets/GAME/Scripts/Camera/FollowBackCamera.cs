@@ -21,7 +21,11 @@ public class FollowBackCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Mathf.Abs(moveCtrl.GetSpeed().x) < speedThreshold) return;
+        if (Mathf.Abs(moveCtrl.GetSpeed().x) < speedThreshold)
+        {
+            AlignCameraYPosition();
+            return;
+        }
 
         Vector3 currOffset = new Vector3(Mathf.Sign(moveCtrl.GetSpeed().x) * offset.x, offset.y, offset.z);
         Vector3 desiredPosition = moveCtrl.transform.position + currOffset;
@@ -33,4 +37,12 @@ public class FollowBackCamera : MonoBehaviour
         transform.position = smoothedPosition;
     }
 
+    private void AlignCameraYPosition()
+    {
+        Vector3 currOffset = new Vector3(Mathf.Sign(moveCtrl.GetSpeed().x) * offset.x, offset.y, offset.z);
+        Vector3 desiredPosition = moveCtrl.transform.position + currOffset;
+
+        Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, cameraSpeed);
+        transform.position = new Vector3(transform.position.x, smoothedPosition.y, transform.position.z);
+    }
 }
