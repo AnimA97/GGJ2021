@@ -8,6 +8,9 @@ public class ObjetoOlible : MonoBehaviour
     //Configuraciones
     public bool irresistible;
     public bool danino;
+    
+    //Auxiliares
+    private bool yaOlido = false;
 
     // Start is called before the first frame update
     void Start()
@@ -28,5 +31,14 @@ public class ObjetoOlible : MonoBehaviour
     public bool esDanino()
     {
         return this.danino;
+    }
+
+    public bool fueYaOlido()
+    {
+        return yaOlido;
+    }
+    public void oler()
+    {
+        yaOlido = true;
     }
 }

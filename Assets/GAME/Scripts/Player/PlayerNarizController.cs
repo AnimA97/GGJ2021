@@ -28,7 +28,7 @@ public class PlayerNarizController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
     void FixedUpdate()
@@ -51,9 +51,22 @@ public class PlayerNarizController : MonoBehaviour
                 break;
             case 10: //OlorCercano
                 ObjetoOlible objetoOloroso = otroCollider.gameObject.GetComponent<ObjetoOlible>();
-                bool esIrresistible = objetoOloroso.esIrresistible();
-                if (esIrresistible)
+                
+                if (objetoOloroso.esIrresistible() && objetoOloroso.fueYaOlido() == false)
                 {
+                    oler(objetoOloroso);
+                }
+                break;
+        }
+    }
+    private void OnTriggerStay2D(Collider2D otroCollider)
+    {
+        switch (otroCollider.gameObject.layer)
+        {
+            case 10: //OlorCercano
+                if (Input.GetButtonDown("Fire1"))
+                {
+                    ObjetoOlible objetoOloroso = otroCollider.gameObject.GetComponent<ObjetoOlible>();
                     oler(objetoOloroso);
                 }
                 break;
