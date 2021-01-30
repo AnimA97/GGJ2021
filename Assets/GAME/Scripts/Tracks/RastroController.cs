@@ -51,16 +51,20 @@ public class RastroController : MonoBehaviour
         }
     }
 
-    public void dañarRastro(float duracionAfectada)
+    public void danarRastro(float dano)
     {
         float tiempoActual = Time.time;
         float tiempoDesdeInicio = tiempoActual - _startingTime;
-        float nuevoTiempoHastaDestruccion = duracion - tiempoDesdeInicio - duracionAfectada;
+        float nuevoTiempoHastaDestruccion = duracion - tiempoDesdeInicio - dano;        
         
         if(nuevoTiempoHastaDestruccion > 0)
         {
             Destroy(this.gameObject, nuevoTiempoHastaDestruccion);
-            duracion = duracion - duracionAfectada;
+            duracion = duracion - dano;
+        }
+        else
+        {
+            Destroy(this.gameObject);
         }
 
     }
