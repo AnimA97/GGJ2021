@@ -8,6 +8,7 @@ public class PlayerTurnHandler : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         animator.SetBool("Jump", false);
+        animator.SetBool("Sniff", false);
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

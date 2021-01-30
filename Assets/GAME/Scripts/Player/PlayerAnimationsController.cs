@@ -40,5 +40,9 @@ public class PlayerAnimationsController : MonoBehaviour
         {
             _animator.SetBool("Jump", true);
         }
+        if (Input.GetButtonDown("Fire1") && moveCtrl.IsGrounded())
+        {
+            _animator.SetBool("Sniff", true);
+        }
     }
 }
