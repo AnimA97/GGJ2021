@@ -47,3 +47,6 @@ TagManager:
   - name: Characters
     uniqueID: 1589172537
     locked: 0
+  - name: Front Items
+    uniqueID: 2106863735
+    locked: 0

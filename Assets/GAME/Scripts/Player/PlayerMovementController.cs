@@ -54,7 +54,7 @@ public class PlayerMovementController : MonoBehaviour
 
         if (Input.GetButtonDown("Jump") && _isGrounded == true)
         {
-            _rigidbody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        //    _rigidbody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
     }
 
