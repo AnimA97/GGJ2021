@@ -26,7 +26,6 @@ public class FollowBackCamera : MonoBehaviour
         Vector3 currOffset = new Vector3(Mathf.Sign(moveCtrl.GetSpeed().x) * offset.x, offset.y, offset.z);
         Vector3 desiredPosition = moveCtrl.transform.position + currOffset;
 
-        Debug.Log(Mathf.Abs(transform.position.x - desiredPosition.x));
         if (Mathf.Abs(moveCtrl.transform.position.x - desiredPosition.x) < distanceThreshold)
             transform.position = moveCtrl.transform.position + currOffset;
 
