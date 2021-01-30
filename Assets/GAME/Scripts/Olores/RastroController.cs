@@ -9,7 +9,7 @@ public class RastroController : MonoBehaviour
     public Color colorInicial;
     public Color colorFinal;
 
-    private float duracionColorDaño = 0.1f;
+    public float duracionColorDano = 0.1f;
     public Color colorDaño = Color.red;
 
 
@@ -18,7 +18,7 @@ public class RastroController : MonoBehaviour
 
     //Auxiliares
     private float _startingTime;
-    private float _inicioDaño = 0;
+    private bool _siendoDanado;
 
     void Awake()
     {
@@ -29,26 +29,22 @@ public class RastroController : MonoBehaviour
     void Start()
     {
         _startingTime = Time.time;
-
+        Debug.Log(_startingTime);
         Destroy(this.gameObject, duracion);
     }
 
     // Update is called once per frame
     void Update()
     {
-        float tiempoActual = Time.time;
-        float tiempoDañoTranscurrido = tiempoActual - _inicioDaño;
-        if (tiempoDañoTranscurrido > duracionColorDaño && tiempoDañoTranscurrido != tiempoActual)
+        if(_siendoDanado != true)
         {
+            float tiempoActual = Time.time;
             float _timeSinceStarted = tiempoActual - _startingTime;
             float _percentageCompleated = _timeSinceStarted / duracion;
 
             _renderer.color = Color.Lerp(colorInicial, colorFinal, _percentageCompleated);
         }
-        else
-        {
-            _renderer.color = colorDaño;
-        }
+        
     }
 
     public void danarRastro(float dano)
@@ -61,6 +57,7 @@ public class RastroController : MonoBehaviour
         {
             Destroy(this.gameObject, nuevoTiempoHastaDestruccion);
             duracion = duracion - dano;
+            StartCoroutine("RecibirDanoPorSegundo");
         }
         else
         {
@@ -68,4 +65,16 @@ public class RastroController : MonoBehaviour
         }
 
     }
+
+    private IEnumerator RecibirDanoPorSegundo()
+    {
+        _siendoDanado = true;
+        _renderer.color = colorDaño;
+
+        yield return new WaitForSeconds(duracionColorDano);
+
+        _siendoDanado = false;
+
+    }
+
 }
