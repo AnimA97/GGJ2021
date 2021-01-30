@@ -70,7 +70,7 @@ public class PlayerController : MonoBehaviour
                 {
                     if(_tiempoInicioNube == 0)
                     {
-                        _rastro.dañarRastro(0.1);
+                        _rastro.dañarRastro(0.1f);
                     }
                     
                 }
