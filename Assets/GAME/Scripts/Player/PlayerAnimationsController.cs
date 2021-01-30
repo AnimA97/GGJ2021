@@ -26,16 +26,19 @@ public class PlayerAnimationsController : MonoBehaviour
         if (horizontalInput < 0f)
         {
             if (!body.flipX) _animator.SetInteger("Turn", -1);
-            body.flipX = true;
+            //body.flipX = true;
         }
         else if (horizontalInput > 0f)
         {
             if (body.flipX) _animator.SetInteger("Turn", 1);
-            body.flipX = false;
+            //body.flipX = false;
         }
 
         _animator.SetFloat("Speed", Mathf.Abs(_rigidbody.velocity.x));
         _animator.SetBool("Grounded", moveCtrl.IsGrounded());
-        _animator.SetBool("Jump", !moveCtrl.IsGrounded());
+        if (Input.GetButtonDown("Jump") && moveCtrl.IsGrounded())
+        {
+            _animator.SetBool("Jump", true);
+        }
     }
 }

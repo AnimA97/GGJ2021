@@ -7,17 +7,19 @@ public class PlayerTurnHandler : StateMachineBehaviour
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        animator.SetInteger("Turn", 0);
+        animator.SetBool("Jump", false);
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
-    //override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    
-    //}
+    override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+    }
 
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        if (animator.GetInteger("Turn") == -1) animator.GetComponentInChildren<SpriteRenderer>().flipX = true;
+        if (animator.GetInteger("Turn") == 1) animator.GetComponentInChildren<SpriteRenderer>().flipX = false;
+        animator.SetInteger("Turn", 0);
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
