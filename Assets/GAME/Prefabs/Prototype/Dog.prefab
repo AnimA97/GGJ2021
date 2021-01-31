@@ -128,6 +128,7 @@ GameObject:
   - component: {fileID: 1790183930}
   - component: {fileID: 7413039342383247052}
   - component: {fileID: 5363737220654411088}
+  - component: {fileID: 8785956745167872603}
   m_Layer: 0
   m_Name: Dog
   m_TagString: Untagged
@@ -299,3 +300,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d69c69d24773bb04d9531c9961ea87e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!81 &8785956745167872603
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2484002855941710120}
+  m_Enabled: 1
