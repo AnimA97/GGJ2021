@@ -71,4 +71,8 @@ public class GameSystem : MonoBehaviour
         winModal.gameObject.SetActive(true);
         state = GameState.PAUSE;
     }
+
+    public void FoundClue()
+    {
+    }
 }
