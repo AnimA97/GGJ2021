@@ -10,9 +10,12 @@ public class PlayerNarizController : MonoBehaviour
     public float periodoSegundosDano;
 
     //Componentes
-    
+
 
     //Auxiliares
+    private PlayerAnimationsController _animations;
+    private Animator _animator;
+    private bool _cercaDeObjetoOlible = false;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +25,8 @@ public class PlayerNarizController : MonoBehaviour
 
     void Awake()
     {
-        
+        //_animations = GetComponent<PlayerAnimationsController>();
+        _animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -40,6 +44,7 @@ public class PlayerNarizController : MonoBehaviour
     private float _olorDano = 0;
     private void OnTriggerEnter2D(Collider2D otroCollider)
     {
+        //Debug.Log("layer: " + otroCollider.gameObject.layer);
         switch (otroCollider.gameObject.layer)
         {
             case 9: //NubeOlor
@@ -49,12 +54,15 @@ public class PlayerNarizController : MonoBehaviour
                     StartCoroutine("DanoPorSegundo");
                 }
                 break;
-            case 10: //OlorCercano
+            case 10: //OlorSimple
                 ObjetoOlible objetoOloroso = otroCollider.gameObject.GetComponent<ObjetoOlible>();
-                
                 if (objetoOloroso.esIrresistible() && objetoOloroso.fueYaOlido() == false)
                 {
                     oler(objetoOloroso);
+                }
+                else
+                {
+                    _cercaDeObjetoOlible = true;
                 }
                 break;
         }
@@ -63,7 +71,7 @@ public class PlayerNarizController : MonoBehaviour
     {
         switch (otroCollider.gameObject.layer)
         {
-            case 10: //OlorCercano
+            case 10: //OlorSimple
                 if (Input.GetButtonDown("Fire1"))
                 {
                     ObjetoOlible objetoOloroso = otroCollider.gameObject.GetComponent<ObjetoOlible>();
@@ -79,6 +87,9 @@ public class PlayerNarizController : MonoBehaviour
         {
             case 9: //NubeOlor
                 _olorDano = _olorDano - otroCollider.gameObject.GetComponent<NubeOlorController>().getDano();
+                break;
+            case 10:
+                _cercaDeObjetoOlible = false;
                 break;
         }
     }
@@ -102,6 +113,7 @@ public class PlayerNarizController : MonoBehaviour
 
     private void oler(ObjetoOlible objetoOloroso)
     {
+        _animator.SetBool("Sniff", true);
         if (objetoOloroso.esDanino())
         {
             //Logica de daño
@@ -109,5 +121,11 @@ public class PlayerNarizController : MonoBehaviour
         {
             //Logica de despliege de rastro
         }
+        objetoOloroso.oler();
+    }
+
+    public bool cercaDeObjetoOlible()
+    {
+        return _cercaDeObjetoOlible;
     }
 }

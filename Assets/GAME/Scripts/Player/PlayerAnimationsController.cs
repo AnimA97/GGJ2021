@@ -6,12 +6,13 @@ public class PlayerAnimationsController : MonoBehaviour
 {
 
     [HideInInspector]
-    public bool isSniffing;
+    public bool isSniffing = false;
 
     private Rigidbody2D _rigidbody;
     private Animator _animator;
     private SpriteRenderer body;
     private PlayerMovementController moveCtrl;
+    private PlayerNarizController _narizController;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +21,7 @@ public class PlayerAnimationsController : MonoBehaviour
         _animator = GetComponent<Animator>();
         body = GetComponentInChildren<SpriteRenderer>();
         moveCtrl = GetComponent<PlayerMovementController>();
+        _narizController = GetComponent<PlayerNarizController>();
     }
 
     // Update is called once per frame
@@ -50,10 +52,11 @@ public class PlayerAnimationsController : MonoBehaviour
         {
             _animator.SetBool("Jump", true);
         }
-        if (Input.GetButtonDown("Fire1") && moveCtrl.IsGrounded())
+        if (Input.GetButtonDown("Fire1") && _narizController.cercaDeObjetoOlible() && moveCtrl.IsGrounded())
         {
             _animator.SetBool("Sniff", true);
         }
 
     }
+
 }
