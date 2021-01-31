@@ -4,9 +4,15 @@ using UnityEngine;
 
 public class PlayerAnimationHandler : StateMachineBehaviour
 {
+
+    private SpriteRenderer body;
+    private PlayerMovementController moveCtrl;
+
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        if (moveCtrl == null) moveCtrl = animator.GetComponent<PlayerMovementController>();
+        if (animator.GetBool("Sniff")) moveCtrl.isSniffing = true;
         animator.SetBool("Jump", false);
         animator.SetBool("Sniff", false);
     }
@@ -18,9 +24,11 @@ public class PlayerAnimationHandler : StateMachineBehaviour
 
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if (animator.GetInteger("Turn") == -1) animator.GetComponentInChildren<SpriteRenderer>().flipX = true;
-        if (animator.GetInteger("Turn") == 1) animator.GetComponentInChildren<SpriteRenderer>().flipX = false;
+        if (body == null) body = animator.GetComponentInChildren<SpriteRenderer>();
+        if (animator.GetInteger("Turn") == -1) body.flipX = true;
+        if (animator.GetInteger("Turn") == 1) body.flipX = false;
         animator.SetInteger("Turn", 0);
+        moveCtrl.isSniffing = false;
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()

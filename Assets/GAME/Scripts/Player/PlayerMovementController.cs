@@ -21,11 +21,14 @@ public class PlayerMovementController : MonoBehaviour
     private Vector2 _movement;
     private bool _isGrounded;
     private bool _isFalling;
+    //[HideInInspector]
+    public bool isSniffing;
 
     // Start is called before the first frame update
     void Start()
     {
         _isFalling = false;
+        isSniffing = false;
     }
 
     void Awake()
@@ -36,11 +39,23 @@ public class PlayerMovementController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isSniffing || (GameSystem.instance != null && GameSystem.instance.isPaused()))
+        {
+            _rigidbody.velocity = Vector2.zero;
+            return;
+        }
+
         Movement();
     }
 
     void FixedUpdate()
     {
+        if (isSniffing || (GameSystem.instance != null && GameSystem.instance.isPaused()))
+        {
+            _rigidbody.velocity = Vector2.zero;
+            return;
+        }
+
         float horizontalVelocity = _movement.normalized.x * speed;
         _rigidbody.velocity = new Vector2(horizontalVelocity, _rigidbody.velocity.y);
     }

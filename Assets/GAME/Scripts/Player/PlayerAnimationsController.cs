@@ -5,6 +5,9 @@ using UnityEngine;
 public class PlayerAnimationsController : MonoBehaviour
 {
 
+    [HideInInspector]
+    public bool isSniffing;
+
     private Rigidbody2D _rigidbody;
     private Animator _animator;
     private SpriteRenderer body;
@@ -22,6 +25,13 @@ public class PlayerAnimationsController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isSniffing || (GameSystem.instance != null && GameSystem.instance.isPaused()))
+        {
+            _animator.speed = 0f;
+            return;
+        }
+        _animator.speed = 1f;
+
         float horizontalInput = Input.GetAxisRaw("Horizontal");
         if (horizontalInput < 0f)
         {
@@ -44,6 +54,6 @@ public class PlayerAnimationsController : MonoBehaviour
         {
             _animator.SetBool("Sniff", true);
         }
-        
+
     }
 }
