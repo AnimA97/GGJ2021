@@ -27,22 +27,22 @@ public class FollowBackCamera : MonoBehaviour
             return;
         }
 
-        Vector3 currOffset = new Vector3(Mathf.Sign(moveCtrl.GetSpeed().x) * offset.x, offset.y, offset.z);
+        Vector3 currOffset = new Vector3(Mathf.Sign(moveCtrl.GetSpeed().x) * offset.x, offset.y > moveCtrl.transform.position.y? offset.y: 0f, offset.z);
         Vector3 desiredPosition = moveCtrl.transform.position + currOffset;
 
         if (Mathf.Abs(moveCtrl.transform.position.x - desiredPosition.x) < distanceThreshold)
             transform.position = moveCtrl.transform.position + currOffset;
 
         Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, cameraSpeed);
-        transform.position = new Vector3(smoothedPosition.x, moveCtrl.transform.position.y + currOffset.y, smoothedPosition.z);
+        transform.position = new Vector3(smoothedPosition.x, smoothedPosition.y, smoothedPosition.z);
     }
 
     private void AlignCameraYPosition()
     {
-        Vector3 currOffset = new Vector3(Mathf.Sign(moveCtrl.GetSpeed().x) * offset.x, offset.y, offset.z);
+        Vector3 currOffset = new Vector3(Mathf.Sign(moveCtrl.GetSpeed().x) * offset.x, offset.y > moveCtrl.transform.position.y ? offset.y : 0f, offset.z);
         Vector3 desiredPosition = moveCtrl.transform.position + currOffset;
 
         Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, cameraSpeed);
-        transform.position = new Vector3(transform.position.x, moveCtrl.transform.position.y + currOffset.y, transform.position.z);
+        transform.position = new Vector3(transform.position.x, smoothedPosition.y, transform.position.z);
     }
 }
