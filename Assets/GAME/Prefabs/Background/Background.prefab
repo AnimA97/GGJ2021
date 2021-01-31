@@ -694,6 +694,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b26d953fbbc8d6744912411ae643abb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  farBuildings: {fileID: 384338949}
+  mostFarBuildings: {fileID: 801132270}
+  sky: {fileID: 505059586}
 --- !u!1 &3363490086271960844
 GameObject:
   m_ObjectHideFlags: 0
@@ -1027,6 +1030,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6205371488737762769}
+  - component: {fileID: 801132270}
   m_Layer: 0
   m_Name: Super back Buildings
   m_TagString: Untagged
@@ -1057,6 +1061,27 @@ Transform:
   m_Father: {fileID: 3363490086265089256}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &801132270
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4833834732332448927}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &4977457328665164303
 GameObject:
   m_ObjectHideFlags: 0
@@ -1471,6 +1496,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1876583797860121017}
+  - component: {fileID: 505059586}
   m_Layer: 0
   m_Name: Sky
   m_TagString: Untagged
@@ -1495,6 +1521,27 @@ Transform:
   m_Father: {fileID: 3363490086265089256}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &505059586
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7608878139886641253}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &7698312131430450054
 GameObject:
   m_ObjectHideFlags: 0
@@ -1747,6 +1794,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6476467628214097407}
+  - component: {fileID: 384338949}
   m_Layer: 0
   m_Name: Back Buildings
   m_TagString: Untagged
@@ -1778,6 +1826,27 @@ Transform:
   m_Father: {fileID: 3363490086265089256}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &384338949
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8668907226482354183}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &8809593386753629201
 GameObject:
   m_ObjectHideFlags: 0
