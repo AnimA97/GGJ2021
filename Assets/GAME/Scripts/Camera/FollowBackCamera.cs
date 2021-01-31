@@ -34,7 +34,7 @@ public class FollowBackCamera : MonoBehaviour
             transform.position = moveCtrl.transform.position + currOffset;
 
         Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, cameraSpeed);
-        transform.position = smoothedPosition;
+        transform.position = new Vector3(smoothedPosition.x, moveCtrl.transform.position.y + currOffset.y, smoothedPosition.z);
     }
 
     private void AlignCameraYPosition()
@@ -43,6 +43,6 @@ public class FollowBackCamera : MonoBehaviour
         Vector3 desiredPosition = moveCtrl.transform.position + currOffset;
 
         Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, cameraSpeed);
-        transform.position = new Vector3(transform.position.x, smoothedPosition.y, transform.position.z);
+        transform.position = new Vector3(transform.position.x, moveCtrl.transform.position.y + currOffset.y, transform.position.z);
     }
 }
