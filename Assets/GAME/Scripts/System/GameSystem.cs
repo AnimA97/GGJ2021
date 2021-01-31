@@ -15,6 +15,8 @@ public class GameSystem : MonoBehaviour
 
     public GameObject player;
     public DialogModalController dialogModal;
+    public HUDController hudController;
+
     public GameState state;
 
     void Awake()
@@ -37,12 +39,23 @@ public class GameSystem : MonoBehaviour
         {
             dialogModal.HideMessage();
         }
+        if (Input.GetKeyDown(KeyCode.P)) RemoveLife();
+    }
+
+    public void RemoveLife()
+    {
+        if (hudController != null) hudController.RemoveLife();
+    }
+
+    public void RestoreLives()
+    {
+        if (hudController != null) hudController.RestoreLives();
     }
 
     public void ShowPoliceShoutingMessageModal()
     {
         state = GameState.PAUSE;
-        dialogModal.ShowMessage();
+        dialogModal.ShowMessage(RandomMessages.OneForPolice());
     }
 
     internal bool isPaused()

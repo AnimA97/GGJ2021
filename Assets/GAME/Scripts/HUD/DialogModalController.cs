@@ -13,11 +13,11 @@ public class DialogModalController : MonoBehaviour
         if (_animator != null && dialogeHandler.messageFinished) _animator.speed = 0f;
     }
 
-    public void ShowMessage()
+    public void ShowMessage(string message)
     {
         gameObject.SetActive(true);
         if (dialogeHandler == null) return;
-        dialogeHandler.AnimateDialogueBox("¡Perro malo!\n¡Busca, busca!");
+        dialogeHandler.AnimateDialogueBox(message);
         if (_animator != null) _animator.speed = 1f;
     }
 
