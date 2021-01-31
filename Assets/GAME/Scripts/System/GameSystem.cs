@@ -16,6 +16,7 @@ public class GameSystem : MonoBehaviour
     public GameObject player;
     public DialogModalController dialogModal;
     public HUDController hudController;
+    public WinModalController winModal;
 
     public GameState state;
 
@@ -40,6 +41,7 @@ public class GameSystem : MonoBehaviour
             dialogModal.HideMessage();
         }
         if (Input.GetKeyDown(KeyCode.P)) RemoveLife();
+        if (Input.GetKeyDown(KeyCode.O)) Win();
     }
 
     public void RemoveLife()
@@ -59,8 +61,14 @@ public class GameSystem : MonoBehaviour
         RemoveLife();
     }
 
-    internal bool isPaused()
+    public bool isPaused()
     {
         return state.Equals(GameState.PAUSE);
+    }
+
+    public void Win()
+    {
+        winModal.gameObject.SetActive(true);
+        state = GameState.PAUSE;
     }
 }
