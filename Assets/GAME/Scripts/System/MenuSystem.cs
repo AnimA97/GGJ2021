@@ -8,7 +8,7 @@ public class MenuSystem : MonoBehaviour
     
     public void StartGame()
     {
-        SceneManager.LoadScene("Test_Samuel");
+        SceneManager.LoadScene("Level");
     }
 
 }
