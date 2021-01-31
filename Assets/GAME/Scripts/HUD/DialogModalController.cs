@@ -6,12 +6,19 @@ public class DialogModalController : MonoBehaviour
 {
 
     public DialogueHandler dialogeHandler;
+    public Animator _animator;
+
+    private void Update()
+    {
+        if (_animator != null && dialogeHandler.messageFinished) _animator.speed = 0f;
+    }
 
     public void ShowMessage()
     {
         gameObject.SetActive(true);
         if (dialogeHandler == null) return;
         dialogeHandler.AnimateDialogueBox("¡Perro malo!\n¡Busca, busca!");
+        if (_animator != null) _animator.speed = 1f;
     }
 
     public void HideMessage()
