@@ -44,5 +44,6 @@ public class PlayerAnimationsController : MonoBehaviour
         {
             _animator.SetBool("Sniff", true);
         }
+        
     }
 }
