@@ -5,10 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class MenuSystem : MonoBehaviour
 {
-    
+
+    public LevelLoaderController levelLoader;
+
     public void StartGame()
     {
-        SceneManager.LoadScene("Level");
+        levelLoader.GoToNewPage("Level");
     }
 
 }
