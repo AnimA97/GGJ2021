@@ -52,7 +52,7 @@ public class GameSystem : MonoBehaviour
         if (hudController != null)
         {
             hudController.RemoveLife();
-            if (hudController.GetHeartCount() <= 0)
+            if (hudController.GetHeartCount() < 0)
             {
                 loseModal.gameObject.SetActive(true);
                 state = GameState.PAUSE;
