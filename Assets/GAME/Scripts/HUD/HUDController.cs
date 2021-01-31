@@ -2,14 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class HUDController : MonoBehaviour
 {
-    public HUDHealthController healthController;
+    public HUDHealthController healthController;    
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -27,4 +28,6 @@ public class HUDController : MonoBehaviour
     {
         healthController.RestoreLives();
     }
+
+    
 }

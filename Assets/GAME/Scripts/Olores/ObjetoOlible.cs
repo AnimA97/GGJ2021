@@ -9,6 +9,9 @@ public class ObjetoOlible : MonoBehaviour
     public bool irresistible;
     public bool danino;
     
+    //Componentes
+    
+
     //Auxiliares
     private bool yaOlido = false;
 

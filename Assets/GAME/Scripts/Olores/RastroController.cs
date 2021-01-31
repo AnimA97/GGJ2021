@@ -6,25 +6,23 @@ public class RastroController : MonoBehaviour
 {
     //Configuraciones
     public float duracion;
-    public Color colorInicial;
-    public Color colorFinal;
-
-    public float duracionColorDano = 0.1f;
-    public Color colorDaño = Color.red;
 
 
     //Componentes
     private SpriteRenderer _renderer;
     private ParticleSystem[] _particleSystems;
+    private HUDTiempoRastroController _controladorHUDTiempoRastro;
 
     //Auxiliares
     private float _startingTime;
     private bool _siendoDanado;
+    private float _porcentajeDeTiempoRestante;
 
     void Awake()
     {
         _renderer = GetComponent<SpriteRenderer>();
         _particleSystems = GetComponentsInChildren<ParticleSystem>();
+        _controladorHUDTiempoRastro = GetComponent<HUDTiempoRastroController>();
     }
 
     // Start is called before the first frame update
@@ -37,27 +35,28 @@ public class RastroController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(_siendoDanado != true)
+        float tiempoActual = Time.time;
+        float _timeSinceStarted = tiempoActual - _startingTime;
+        float porcentajeDeTiempoRestante = _timeSinceStarted / duracion;
+
+        foreach (ParticleSystem _particleSystem in _particleSystems)
         {
-            float tiempoActual = Time.time;
-            float _timeSinceStarted = tiempoActual - _startingTime;
-            float _percentageCompleated = _timeSinceStarted / duracion;
+            var particleSystemEmissionField = _particleSystem.emission;
 
-            foreach (ParticleSystem _particleSystem in _particleSystems)
-            {
-                var particleSystemEmissionField = _particleSystem.emission;
+            //Bajo la niebla
+            float mappeoDeIntensidad = 1 - Mathf.Pow(porcentajeDeTiempoRestante, 2f);
+            particleSystemEmissionField.rateOverTime = 30 * mappeoDeIntensidad;
 
-                float ecuacionDeMapeoDelTiempo = 1 - Mathf.Pow(_percentageCompleated, 2f);
-                particleSystemEmissionField.rateOverTime = 30 * ecuacionDeMapeoDelTiempo;
-            }
-
-            //_renderer.color = Color.Lerp(colorInicial, colorFinal, _percentageCompleated);
+            //Actualizo HUD
+            _controladorHUDTiempoRastro.actualizarTiempoRastro(porcentajeDeTiempoRestante);
         }
+
         
     }
 
     public void danarRastro(float dano)
     {
+        Debug.Log("Daño");
         float tiempoActual = Time.time;
         float tiempoDesdeInicio = tiempoActual - _startingTime;
         float nuevoTiempoHastaDestruccion = duracion - tiempoDesdeInicio - dano;        
@@ -66,21 +65,26 @@ public class RastroController : MonoBehaviour
         {
             Destroy(this.gameObject, nuevoTiempoHastaDestruccion);
             duracion = duracion - dano;
-            StartCoroutine("RecibirDanoPorSegundo");
+            //StartCoroutine("RecibirDanoPorSegundo");
         }
         
 
     }
 
-    private IEnumerator RecibirDanoPorSegundo()
+    /*public float obtenerPorcentajeTiempoRestante()
+    {
+        return _porcentajeDeTiempoRestante;
+    }*/
+
+    /*private IEnumerator RecibirDanoPorSegundo()
     {
         _siendoDanado = true;
-        _renderer.color = colorDaño;
+        _barraDeTiempo.color = colorDano;
 
         yield return new WaitForSeconds(duracionColorDano);
 
         _siendoDanado = false;
 
-    }
+    }*/
 
 }
