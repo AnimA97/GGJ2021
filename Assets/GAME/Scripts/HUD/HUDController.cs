@@ -29,5 +29,10 @@ public class HUDController : MonoBehaviour
         healthController.RestoreLives();
     }
 
+    public int GetHeartCount()
+    {
+        return healthController.GetHeartCount();
+    }
+
     
 }
