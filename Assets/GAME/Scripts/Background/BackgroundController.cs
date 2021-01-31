@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class BackgroundController : MonoBehaviour
 {
+
+    public Transform sky;
+
     // Start is called before the first frame update
     void Start()
     {
