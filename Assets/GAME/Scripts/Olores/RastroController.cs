@@ -15,6 +15,7 @@ public class RastroController : MonoBehaviour
 
     //Componentes
     private SpriteRenderer _renderer;
+    private ParticleSystem[] _particleSystems;
 
     //Auxiliares
     private float _startingTime;
@@ -23,13 +24,13 @@ public class RastroController : MonoBehaviour
     void Awake()
     {
         _renderer = GetComponent<SpriteRenderer>();
+        _particleSystems = GetComponentsInChildren<ParticleSystem>();
     }
 
     // Start is called before the first frame update
     void Start()
     {
         _startingTime = Time.time;
-        Debug.Log(_startingTime);
         Destroy(this.gameObject, duracion);
     }
 
@@ -42,7 +43,15 @@ public class RastroController : MonoBehaviour
             float _timeSinceStarted = tiempoActual - _startingTime;
             float _percentageCompleated = _timeSinceStarted / duracion;
 
-            _renderer.color = Color.Lerp(colorInicial, colorFinal, _percentageCompleated);
+            foreach (ParticleSystem _particleSystem in _particleSystems)
+            {
+                var particleSystemEmissionField = _particleSystem.emission;
+
+                float ecuacionDeMapeoDelTiempo = 1 - Mathf.Pow(_percentageCompleated, 2f);
+                particleSystemEmissionField.rateOverTime = 30 * ecuacionDeMapeoDelTiempo;
+            }
+
+            //_renderer.color = Color.Lerp(colorInicial, colorFinal, _percentageCompleated);
         }
         
     }
@@ -59,10 +68,7 @@ public class RastroController : MonoBehaviour
             duracion = duracion - dano;
             StartCoroutine("RecibirDanoPorSegundo");
         }
-        else
-        {
-            Destroy(this.gameObject);
-        }
+        
 
     }
 

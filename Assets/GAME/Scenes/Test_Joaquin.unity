@@ -877,7 +877,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1727734447}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.54, y: -4.94, z: -0.33955544}
+  m_LocalPosition: {x: -1.54, y: -3.74, z: -0.33955544}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1058,6 +1058,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Olor
       objectReference: {fileID: 0}
+    - target: {fileID: 97696664632049972, guid: c77cab62fa34ab845b090404bd05601f,
+        type: 3}
+      propertyPath: dano
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 97696664632049973, guid: c77cab62fa34ab845b090404bd05601f,
         type: 3}
       propertyPath: m_RootOrder
@@ -1143,6 +1148,16 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: -0.040405035
       objectReference: {fileID: 0}
+    - target: {fileID: 97696664632049975, guid: c77cab62fa34ab845b090404bd05601f,
+        type: 3}
+      propertyPath: m_AutoTiling
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 97696664632049975, guid: c77cab62fa34ab845b090404bd05601f,
+        type: 3}
+      propertyPath: m_UsedByEffector
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c77cab62fa34ab845b090404bd05601f, type: 3}
 --- !u!1001 &2866414961709759740
@@ -1226,6 +1241,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1146291053}
     m_Modifications:
+    - target: {fileID: 399471279735812380, guid: c2ca871040027bc4680021248eaebf01,
+        type: 3}
+      propertyPath: autoRandomSeed
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1796409433958035200, guid: c2ca871040027bc4680021248eaebf01,
         type: 3}
       propertyPath: m_RootOrder
