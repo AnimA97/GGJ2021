@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 8430703379363914167}
   - component: {fileID: 4618964517323322050}
   - component: {fileID: 1076520153607658497}
+  - component: {fileID: 6136768673730302550}
+  - component: {fileID: 2589126255853775951}
   m_Layer: 8
   m_Name: piso_Edificio1
   m_TagString: Untagged
@@ -128,6 +130,58 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
+--- !u!61 &6136768673730302550
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1710497171968457329}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 1
+  m_UsedByComposite: 0
+  m_Offset: {x: 1.8151674, y: 2.9649763}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 7.61, y: 4.31}
+    newSize: {x: 7.61, y: 4.54}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.2750492, y: 0.25840378}
+  m_EdgeRadius: 0
+--- !u!61 &2589126255853775951
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1710497171968457329}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 1
+  m_UsedByComposite: 0
+  m_Offset: {x: -1.79, y: 2.92}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 7.61, y: 4.31}
+    newSize: {x: 7.61, y: 4.54}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.2750492, y: 0.25840378}
+  m_EdgeRadius: 0
 --- !u!1 &4099068782327764750
 GameObject:
   m_ObjectHideFlags: 0
@@ -301,6 +355,8 @@ GameObject:
   - component: {fileID: 8411430966376024620}
   - component: {fileID: 6070397231627115808}
   - component: {fileID: 5840843424396246866}
+  - component: {fileID: 2662731672991900575}
+  - component: {fileID: 8925422517564482166}
   m_Layer: 8
   m_Name: plantaBaja_Edificio1
   m_TagString: Untagged
@@ -417,3 +473,55 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
+--- !u!61 &2662731672991900575
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7236688114966357884}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 1
+  m_UsedByComposite: 0
+  m_Offset: {x: 1.8151674, y: 3.116305}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 7.61, y: 4.82}
+    newSize: {x: 7.61, y: 4.59}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.2750492, y: 0.30884743}
+  m_EdgeRadius: 0
+--- !u!61 &8925422517564482166
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7236688114966357884}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 1
+  m_UsedByComposite: 0
+  m_Offset: {x: -1.79, y: 4.23}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 7.61, y: 4.82}
+    newSize: {x: 7.61, y: 4.59}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.43, y: 0.25840378}
+  m_EdgeRadius: 0

@@ -56,6 +56,7 @@ public class GameSystem : MonoBehaviour
     {
         state = GameState.PAUSE;
         dialogModal.ShowMessage(RandomMessages.OneForPolice());
+        RemoveLife();
     }
 
     internal bool isPaused()

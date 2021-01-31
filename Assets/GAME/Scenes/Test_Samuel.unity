@@ -1750,12 +1750,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Police Dialog Modal
       objectReference: {fileID: 0}
-    - target: {fileID: 8794972331598175280, guid: 99fc540f176ec4f4fa7730a16691059e,
+    - target: {fileID: 8794972330829004573, guid: 99fc540f176ec4f4fa7730a16691059e,
         type: 3}
-      propertyPath: m_FontData.m_Font
-      value: 
-      objectReference: {fileID: 12800000, guid: 035d07bc92c1c4e42a0fae0ffd82ff59,
-        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 99fc540f176ec4f4fa7730a16691059e, type: 3}
 --- !u!1001 &9215753121304439167
