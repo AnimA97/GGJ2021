@@ -125,6 +125,7 @@ GameObject:
   - component: {fileID: 913187322}
   - component: {fileID: 913187328}
   - component: {fileID: 5439325300158514859}
+  - component: {fileID: 1790183930}
   m_Layer: 0
   m_Name: Dog
   m_TagString: Untagged
@@ -236,3 +237,17 @@ CapsuleCollider2D:
   m_Offset: {x: -0.12, y: -1.13}
   m_Size: {x: 1.0000001, y: 0.3259088}
   m_Direction: 1
+--- !u!114 &1790183930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2484002855941710120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a18be6a3a90eff1428f40bb4dd5cf850, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rastro: {fileID: 0}
+  periodoSegundosDano: 0
