@@ -28,4 +28,9 @@ public class HUDHealthController : MonoBehaviour
         hearts[currentHeart].GetComponent<Animator>().SetBool("Death", true);
         currentHeart--;
     }
+
+    public int GetHeartCount()
+    {
+        return currentHeart;
+    }
 }

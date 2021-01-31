@@ -17,8 +17,11 @@ public class GameSystem : MonoBehaviour
     public DialogModalController dialogModal;
     public HUDController hudController;
     public WinModalController winModal;
+    public WinModalController loseModal;
 
     public GameState state;
+
+    private int clues;
 
     void Awake()
     {
@@ -46,7 +49,15 @@ public class GameSystem : MonoBehaviour
 
     public void RemoveLife()
     {
-        if (hudController != null) hudController.RemoveLife();
+        if (hudController != null)
+        {
+            hudController.RemoveLife();
+            if (hudController.GetHeartCount() <= 0)
+            {
+                loseModal.gameObject.SetActive(true);
+                state = GameState.PAUSE;
+            }
+        }
     }
 
     public void RestoreLives()
@@ -74,5 +85,10 @@ public class GameSystem : MonoBehaviour
 
     public void FoundClue()
     {
+        clues++;
+        if (clues >= 4)
+        {
+            Win();
+        }
     }
 }
