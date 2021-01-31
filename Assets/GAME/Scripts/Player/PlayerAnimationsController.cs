@@ -57,7 +57,7 @@ public class PlayerAnimationsController : MonoBehaviour
             _animator.SetFloat("Speed", Mathf.Abs(_rigidbody.velocity.x));
         }
         _animator.SetBool("Grounded", moveCtrl.IsGrounded());
-        if (Input.GetButtonDown("Jump") && moveCtrl.IsGrounded())
+        if (Input.GetButtonDown("Jump") && moveCtrl.IsGrounded() && moveCtrl.GetSpeed().y == 0f)
         {
             _animator.SetBool("Jump", true);
         }

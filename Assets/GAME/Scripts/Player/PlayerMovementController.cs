@@ -73,7 +73,7 @@ public class PlayerMovementController : MonoBehaviour
             _isFalling = false;
         }
 
-        if (Input.GetButtonDown("Jump") && _isGrounded == true)
+        if (Input.GetButtonDown("Jump") && _isGrounded == true && _rigidbody.velocity.y == 0f)
         {
             _rigidbody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
