@@ -369,7 +369,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -1065,26 +1065,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2484002855941710127, guid: 8fcbf130a1afd6a4f97ab527fd11f7e5,
-        type: 3}
-      propertyPath: m_Offset.x
-      value: 0.06431782
-      objectReference: {fileID: 0}
-    - target: {fileID: 2484002855941710127, guid: 8fcbf130a1afd6a4f97ab527fd11f7e5,
-        type: 3}
-      propertyPath: m_Offset.y
-      value: -1.1930866
-      objectReference: {fileID: 0}
-    - target: {fileID: 2484002855941710127, guid: 8fcbf130a1afd6a4f97ab527fd11f7e5,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 0.7613642
-      objectReference: {fileID: 0}
-    - target: {fileID: 2484002855941710127, guid: 8fcbf130a1afd6a4f97ab527fd11f7e5,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 0.24568653
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8fcbf130a1afd6a4f97ab527fd11f7e5, type: 3}
