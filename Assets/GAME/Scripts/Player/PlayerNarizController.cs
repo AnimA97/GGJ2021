@@ -116,10 +116,12 @@ public class PlayerNarizController : MonoBehaviour
         _animator.SetBool("Sniff", true);
         if (objetoOloroso.esDanino())
         {
-            //Logica de daño
+            GameSystem.instance.RemoveLife();
+            GameSystem.instance.ShowPoliceShoutingMessageModal();
         } else
         {
-            //Logica de despliege de rastro
+
+            GameSystem.instance.FoundClue();
         }
         objetoOloroso.oler();
     }
