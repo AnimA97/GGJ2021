@@ -127,6 +127,7 @@ GameObject:
   - component: {fileID: 913187328}
   - component: {fileID: 1790183930}
   - component: {fileID: 7413039342383247052}
+  - component: {fileID: 5363737220654411088}
   m_Layer: 0
   m_Name: Dog
   m_TagString: Untagged
@@ -236,6 +237,7 @@ MonoBehaviour:
     m_Bits: 256
   groundCheckRadius: 1
   fallSpeed: 0
+  isSniffing: 0
 --- !u!114 &913187328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -248,6 +250,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 031e3f5832e534d40843dd0664244a5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isSniffing: 0
 --- !u!114 &1790183930
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -284,3 +287,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rastro: {fileID: 0}
   periodoSegundosDano: 1
+--- !u!114 &5363737220654411088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2484002855941710120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d69c69d24773bb04d9531c9961ea87e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
