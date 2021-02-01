@@ -14,9 +14,12 @@ public class PlayerAnimationsController : MonoBehaviour
     private PlayerMovementController moveCtrl;
     private PlayerNarizController _narizController;
 
+    private int timesWithZero;
+
     // Start is called before the first frame update
     void Start()
     {
+        timesWithZero = 0;
         _rigidbody = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
         body = GetComponentInChildren<SpriteRenderer>();
@@ -25,7 +28,7 @@ public class PlayerAnimationsController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (isSniffing || (GameSystem.instance != null && GameSystem.instance.isPaused()))
         {
@@ -46,9 +49,15 @@ public class PlayerAnimationsController : MonoBehaviour
             //body.flipX = false;
         }
 
-        _animator.SetFloat("Speed", Mathf.Abs(_rigidbody.velocity.x));
+        if (_rigidbody.velocity.x == 0f) timesWithZero++;
+        if (_rigidbody.velocity.x != 0f) timesWithZero = 0;
+        if (timesWithZero > 3 || _rigidbody.velocity.x != 0f)
+        {
+            timesWithZero=0;
+            _animator.SetFloat("Speed", Mathf.Abs(_rigidbody.velocity.x));
+        }
         _animator.SetBool("Grounded", moveCtrl.IsGrounded());
-        if (Input.GetButtonDown("Jump") && moveCtrl.IsGrounded())
+        if (Input.GetButtonDown("Jump") && moveCtrl.IsGrounded() && moveCtrl.GetSpeed().y == 0f)
         {
             _animator.SetBool("Jump", true);
         }

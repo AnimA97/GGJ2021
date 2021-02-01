@@ -125,7 +125,6 @@ GameObject:
   - component: {fileID: 913187325}
   - component: {fileID: 913187322}
   - component: {fileID: 913187328}
-  - component: {fileID: 1790183930}
   - component: {fileID: 7413039342383247052}
   - component: {fileID: 5363737220654411088}
   - component: {fileID: 8785956745167872603}
@@ -230,7 +229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2adb199f8a6614744963210e66e076fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2.5
+  speed: 5
   jumpForce: 8.5
   groundCheck: {fileID: 7023316095713688193}
   groundLayer:
@@ -252,28 +251,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSniffing: 0
---- !u!114 &1790183930
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2484002855941710120}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed7699c654951aa4c856f7c236fce298, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jumpForce: 2.5
-  jumpTime: 2
-  jumpTimeCounter: 2
-  grounded: 0
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 256
-  stoppedJumping: 0
-  groundCheck: {fileID: 7023316095713688193}
-  groundCheckRadius: 1
 --- !u!114 &7413039342383247052
 MonoBehaviour:
   m_ObjectHideFlags: 0
