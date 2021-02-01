@@ -20,7 +20,36 @@ public class RandomMessages
 
     public static string OneForPolice()
     {
-        return policeMessages[Random.Range(0, policeMessages.Length-1)];
+        return policeMessages[Random.Range(0, policeMessages.Length)];
+    }
+
+
+    private static string[] policeOutOfLimitsMessages = new string[]
+    {
+        "¿Acaso no quieres trabajar?",
+        "Vuelve a meter tu hocico en el trabajo",
+        "¿Hacia donde vas, gnomo?",
+        "De seguro volverás aquí en breve."
+    };
+
+    public static string OutOfLimitsMessage()
+    {
+        return policeOutOfLimitsMessages[Random.Range(0, policeOutOfLimitsMessages.Length)];
+    }
+
+
+
+    private static string[] policeIntoLimitsMessages = new string[]
+    {
+        "¿Acaso no quieres trabajar?",
+        "Vuelve a meter tu hocico en el trabajo",
+        "¿Hacia donde vas, gnomo?",
+        "De seguro volverás aquí en breve."
+    };
+
+    public static string IntoLimitsMessage()
+    {
+        return policeIntoLimitsMessages[Random.Range(0, policeIntoLimitsMessages.Length)];
     }
 
 }

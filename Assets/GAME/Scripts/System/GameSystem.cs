@@ -83,6 +83,18 @@ public class GameSystem : MonoBehaviour
         RemoveLife();
     }
 
+    public void ShowPoliceOutOfLimitsMessageModal()
+    {
+        state = GameState.PAUSE;
+        dialogModal.ShowMessage(RandomMessages.OutOfLimitsMessage());
+    }
+
+    public void ShowPoliceIntoLimitsMessageModal()
+    {
+        state = GameState.PAUSE;
+        dialogModal.ShowMessage(RandomMessages.IntoLimitsMessage());
+    }
+
     public bool isPaused()
     {
         return state.Equals(GameState.PAUSE);
