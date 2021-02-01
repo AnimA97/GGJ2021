@@ -3462,6 +3462,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 853281133}
     m_Modifications:
+    - target: {fileID: 1689109628083794001, guid: 27479dd01b9c5bc40b2102c434c42c44,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 57
+      objectReference: {fileID: 0}
+    - target: {fileID: 1689109628083794001, guid: 27479dd01b9c5bc40b2102c434c42c44,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 64.57
+      objectReference: {fileID: 0}
+    - target: {fileID: 1692934314382349912, guid: 27479dd01b9c5bc40b2102c434c42c44,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1692934314382349912, guid: 27479dd01b9c5bc40b2102c434c42c44,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1692934314382349912, guid: 27479dd01b9c5bc40b2102c434c42c44,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1692934314382349912, guid: 27479dd01b9c5bc40b2102c434c42c44,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1510382752}
+    - target: {fileID: 1692934314382349912, guid: 27479dd01b9c5bc40b2102c434c42c44,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: RestartGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 1692934314382349912, guid: 27479dd01b9c5bc40b2102c434c42c44,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 5335537355617033474, guid: 27479dd01b9c5bc40b2102c434c42c44,
         type: 3}
       propertyPath: m_Name
