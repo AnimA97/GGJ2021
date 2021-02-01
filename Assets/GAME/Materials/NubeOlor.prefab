@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 399471279735812380}
   - component: {fileID: 5124705857460730271}
   m_Layer: 0
-  m_Name: NubeOlor 1
+  m_Name: NubeOlor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1312,15 +1312,15 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.5411765, g: 0.87843144, b: 0.5568628, a: 1}
-        key1: {r: 0.5411765, g: 0.87843144, b: 0.5568628, a: 0}
+        key0: {r: 0.20803669, g: 0.8018868, b: 0.24688971, a: 1}
+        key1: {r: 0.023529414, g: 0.35686275, b: 0.098039225, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
         key6: {r: 0, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
-        ctime0: 0
+        ctime0: 386
         ctime1: 65535
         ctime2: 0
         ctime3: 0
@@ -4737,9 +4737,9 @@ ParticleSystemRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 2106863735
+  m_SortingLayer: 3
+  m_SortingOrder: 10
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0

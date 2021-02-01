@@ -89,6 +89,10 @@ public class PlayerNarizController : MonoBehaviour
                 _olorDano = _olorDano - otroCollider.gameObject.GetComponent<NubeOlorController>().getDano();
                 break;
             case 10:
+                if (_rastro)
+                {
+                    _rastro.danoTerminado();
+                }
                 _cercaDeObjetoOlible = false;
                 break;
         }
@@ -101,6 +105,7 @@ public class PlayerNarizController : MonoBehaviour
 
         if (_rastro != null)
         {
+            Debug.Log("Danando");
             _rastro.danarRastro(_olorDano);
         }
         else
