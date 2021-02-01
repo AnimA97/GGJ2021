@@ -18,6 +18,8 @@ public class HUDTiempoRastroController : MonoBehaviour
     /*private Vector2 _escalaInicialBarraTiempoRastro;*/
     private Color _colorOriginal;
 
+    private bool _siendoDanado = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,7 +38,7 @@ public class HUDTiempoRastroController : MonoBehaviour
     }
 
     
-    public void actualizarTiempoRastro(float porcentajeTiempoRestante)
+    public void actualizarTiempoRastro(float porcentajeTiempoRestante, bool siendoDanado)
     {
         if (sliderTiempoRastro != null)
         {
@@ -46,8 +48,10 @@ public class HUDTiempoRastroController : MonoBehaviour
 
             sliderTiempoRastro.value = 1 - porcentajeTiempoRestante;
 
-            //if(!actualizacionPorDano)
+            if(siendoDanado && _siendoDanado == false)
                 StartCoroutine("ParpadeoBarra");
+
+            _siendoDanado = siendoDanado;
         }
     }
 
@@ -58,5 +62,12 @@ public class HUDTiempoRastroController : MonoBehaviour
         yield return new WaitForSeconds(duracionColorDano);
 
         fillImage.color = _colorOriginal;
+        
+        yield return new WaitForSeconds(1 - duracionColorDano);
+
+        if (!_siendoDanado)
+            yield break;
+
+        StartCoroutine("ParpadeoBarra");
     }
 }

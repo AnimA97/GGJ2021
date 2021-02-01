@@ -15,7 +15,7 @@ public class RastroController : MonoBehaviour
 
     //Auxiliares
     private float _startingTime;
-    private bool _siendoDanado;
+    private bool _siendoDanado = false;
     private float _porcentajeDeTiempoRestante;
 
     void Awake()
@@ -48,15 +48,12 @@ public class RastroController : MonoBehaviour
             particleSystemEmissionField.rateOverTime = 30 * mappeoDeIntensidad;
 
             //Actualizo HUD
-            _controladorHUDTiempoRastro.actualizarTiempoRastro(porcentajeDeTiempoRestante);
-        }
-
-        
+            _controladorHUDTiempoRastro.actualizarTiempoRastro(porcentajeDeTiempoRestante, _siendoDanado);
+        }        
     }
 
     public void danarRastro(float dano)
     {
-        Debug.Log("Daño");
         float tiempoActual = Time.time;
         float tiempoDesdeInicio = tiempoActual - _startingTime;
         float nuevoTiempoHastaDestruccion = duracion - tiempoDesdeInicio - dano;        
@@ -65,10 +62,13 @@ public class RastroController : MonoBehaviour
         {
             Destroy(this.gameObject, nuevoTiempoHastaDestruccion);
             duracion = duracion - dano;
+            _siendoDanado = true;
             //StartCoroutine("RecibirDanoPorSegundo");
-        }
-        
-
+        } 
+    }
+    public void danoTerminado()
+    {
+        _siendoDanado = false;
     }
 
     /*public float obtenerPorcentajeTiempoRestante()

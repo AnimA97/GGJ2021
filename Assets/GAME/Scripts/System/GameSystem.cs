@@ -54,7 +54,10 @@ public class GameSystem : MonoBehaviour
             hudController.RemoveLife();
             if (hudController.GetHeartCount() <= 0)
             {
-                loseModal.gameObject.SetActive(true);
+                if (loseModal)
+                {
+                    loseModal.gameObject.SetActive(true);
+                }
                 state = GameState.PAUSE;
             }
         }
