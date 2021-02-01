@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum GameState
 {
@@ -18,6 +19,7 @@ public class GameSystem : MonoBehaviour
     public HUDController hudController;
     public WinModalController winModal;
     public WinModalController loseModal;
+    public LevelLoaderController levelLoader;
 
     public GameState state;
 
@@ -63,6 +65,12 @@ public class GameSystem : MonoBehaviour
     public void RestoreLives()
     {
         if (hudController != null) hudController.RestoreLives();
+    }
+
+    public void RestartGame()
+    {
+        levelLoader.GoToNewPage("Level");
+        Destroy(this.gameObject);
     }
 
     public void ShowPoliceShoutingMessageModal()
