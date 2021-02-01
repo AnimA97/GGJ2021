@@ -14,11 +14,12 @@ public class ObjetoOlible : MonoBehaviour
 
     //Auxiliares
     private bool yaOlido = false;
+    private AudioSource _audio;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        _audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -42,6 +43,12 @@ public class ObjetoOlible : MonoBehaviour
     }
     public void oler()
     {
+        if (_audio.clip != null) _audio.Play();
         yaOlido = true;
+    }
+    public void SetClip(AudioClip clip)
+    {
+        if (_audio == null || clip == null) return;
+        _audio.clip = clip;
     }
 }

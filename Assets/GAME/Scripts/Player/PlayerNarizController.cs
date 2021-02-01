@@ -16,29 +16,16 @@ public class PlayerNarizController : MonoBehaviour
     private PlayerAnimationsController _animations;
     private Animator _animator;
     private bool _cercaDeObjetoOlible = false;
+    private AudioSource _audio;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     void Awake()
     {
         //_animations = GetComponent<PlayerAnimationsController>();
         _animator = GetComponent<Animator>();
+        _audio = GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    void FixedUpdate()
-    {
-
-    }
 
     private NubeOlorController _olor;
     private float _olorDano = 0;
@@ -56,8 +43,9 @@ public class PlayerNarizController : MonoBehaviour
                 break;
             case 10: //OlorSimple
                 ObjetoOlible objetoOloroso = otroCollider.gameObject.GetComponent<ObjetoOlible>();
-                if (objetoOloroso.esIrresistible() && objetoOloroso.fueYaOlido() == false)
+                if (objetoOloroso.esIrresistible() && !objetoOloroso.fueYaOlido())
                 {
+                    _audio.PlayOneShot(GetComponent<PlayerAnimationsController>().snifClip);
                     oler(objetoOloroso);
                 }
                 else
@@ -121,7 +109,6 @@ public class PlayerNarizController : MonoBehaviour
         _animator.SetBool("Sniff", true);
         if (objetoOloroso.esDanino())
         {
-            GameSystem.instance.RemoveLife();
             GameSystem.instance.ShowPoliceShoutingMessageModal();
         } else
         {

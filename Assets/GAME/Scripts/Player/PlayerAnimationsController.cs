@@ -7,6 +7,7 @@ public class PlayerAnimationsController : MonoBehaviour
 
     [HideInInspector]
     public bool isSniffing = false;
+    public AudioClip snifClip;
 
     private Rigidbody2D _rigidbody;
     private Animator _animator;
@@ -15,6 +16,7 @@ public class PlayerAnimationsController : MonoBehaviour
     private PlayerNarizController _narizController;
 
     private int timesWithZero;
+    private AudioSource _audio;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +27,7 @@ public class PlayerAnimationsController : MonoBehaviour
         body = GetComponentInChildren<SpriteRenderer>();
         moveCtrl = GetComponent<PlayerMovementController>();
         _narizController = GetComponent<PlayerNarizController>();
+        _audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -64,6 +67,7 @@ public class PlayerAnimationsController : MonoBehaviour
         if (Input.GetButtonDown("Fire1") && _narizController.cercaDeObjetoOlible() && moveCtrl.IsGrounded())
         {
             _animator.SetBool("Sniff", true);
+            _audio.PlayOneShot(snifClip);
         }
 
     }

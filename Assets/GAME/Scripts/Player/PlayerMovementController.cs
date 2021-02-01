@@ -36,8 +36,7 @@ public class PlayerMovementController : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (isSniffing || (GameSystem.instance != null && GameSystem.instance.isPaused()))
         {
@@ -48,23 +47,13 @@ public class PlayerMovementController : MonoBehaviour
         Movement();
     }
 
-    void FixedUpdate()
-    {
-        if (isSniffing || (GameSystem.instance != null && GameSystem.instance.isPaused()))
-        {
-            _rigidbody.velocity = Vector2.zero;
-            return;
-        }
-
-        float horizontalVelocity = _movement.normalized.x * speed;
-        _rigidbody.velocity = new Vector2(horizontalVelocity, _rigidbody.velocity.y);
-    }
-
     private void Movement()
     {
         //Horizontal
         float horizontalInput = Input.GetAxisRaw("Horizontal");
         _movement = new Vector2(horizontalInput, 0f);
+        float horizontalVelocity = _movement.normalized.x * speed;
+        _rigidbody.velocity = new Vector2(horizontalVelocity, _rigidbody.velocity.y);
 
         //Vertical
         _isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
@@ -80,7 +69,7 @@ public class PlayerMovementController : MonoBehaviour
         if (!_isGrounded && _rigidbody.velocity.y < 0f && !_isFalling) 
         {
             _isFalling = true;
-            _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, _rigidbody.velocity.y * fallSpeed);
+            //_rigidbody.velocity = new Vector2(_rigidbody.velocity.x, _rigidbody.velocity.y * fallSpeed);
         }
     }
 

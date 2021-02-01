@@ -20,7 +20,7 @@ public class DialogueHandler : MonoBehaviour
     void Start()
     {
         dialogueText = GetComponent<Text>();
-        AnimateDialogueBox(stringToAnimate);
+        AnimateDialogueBox(stringToAnimate, false);
     }
 
     [HideInInspector]
@@ -39,14 +39,14 @@ public class DialogueHandler : MonoBehaviour
     }
 
     //Call this public function when you want to animate text. This should be used in your other scripts.
-    public void AnimateDialogueBox(string text)
+    public void AnimateDialogueBox(string text, bool removeLife)
     {
         speedText = defaultSpeedText;
         messageFinished = false;
-        StartCoroutine(AnimateTextCoroutine(text));
+        StartCoroutine(AnimateTextCoroutine(text, removeLife));
     }
 
-    private IEnumerator AnimateTextCoroutine(string text)
+    private IEnumerator AnimateTextCoroutine(string text, bool removeLife)
     {
 
         //Reset Dialogue Box.
@@ -67,6 +67,9 @@ public class DialogueHandler : MonoBehaviour
             yield return new WaitForSeconds(speedText);
         }
 
-        if (dialogueText.text.Length > 1) messageFinished = true;
+        if (dialogueText.text.Length > 1)
+        {
+            messageFinished = true;
+        }
     }
 }

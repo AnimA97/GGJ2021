@@ -12,7 +12,11 @@ public class PlayerAnimationHandler : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         if (moveCtrl == null) moveCtrl = animator.GetComponent<PlayerMovementController>();
-        if (animator.GetBool("Sniff")) moveCtrl.isSniffing = true;
+        if (animator.GetBool("Sniff"))
+        {
+            moveCtrl.isSniffing = true;
+            Debug.Log("Snif");
+        }
         animator.SetBool("Jump", false);
         animator.SetBool("Sniff", false);
     }
